@@ -40,15 +40,15 @@ public:
 
     // Operators
     Matrix& operator+=(const Matrix& m);
-    Matrix operator+(const Matrix& m) const;
+    Matrix& operator+(const Matrix& m) const;
     Matrix& operator=(const Matrix& m); // Assignment
-    Matrix operator*(const Matrix& m); // Matrix multiplication
-    Matrix operator*(float c); // Scalar multiplication on the right
-    friend Matrix operator*(int scalar, const Matrix& m); // Scalar multiplication on the left
+    Matrix& operator*(const Matrix& m) const; // Matrix multiplication
+    Matrix& operator*(float c); // Scalar multiplication on the right
+    friend Matrix& operator*(int scalar, Matrix& m); // Scalar multiplication on the left
     float operator()(int row, int col) const; // Returns the value in cell (row, col)
     float operator[](int index) const; // Returns the value of the cell in the index position
     friend std::ostream& operator<<(std::ostream& out, const Matrix& m); // Pretty print of the matrix
-    void operator>>() const; // Fills matrix elements
+    friend std::ifstream& operator>>(std::ifstream& is, Matrix& m); // Fills matrix elements
 };
 
 
