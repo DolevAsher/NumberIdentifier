@@ -129,6 +129,54 @@ Ex4/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Ex4.dir/build.make CMakeFiles/Ex4.dir/build
 .PHONY : Ex4/fast
 
+Activation.o: Activation.cpp.o
+.PHONY : Activation.o
+
+# target to build an object file
+Activation.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Ex4.dir/build.make CMakeFiles/Ex4.dir/Activation.cpp.o
+.PHONY : Activation.cpp.o
+
+Activation.i: Activation.cpp.i
+.PHONY : Activation.i
+
+# target to preprocess a source file
+Activation.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Ex4.dir/build.make CMakeFiles/Ex4.dir/Activation.cpp.i
+.PHONY : Activation.cpp.i
+
+Activation.s: Activation.cpp.s
+.PHONY : Activation.s
+
+# target to generate assembly for a file
+Activation.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Ex4.dir/build.make CMakeFiles/Ex4.dir/Activation.cpp.s
+.PHONY : Activation.cpp.s
+
+Dence.o: Dence.cpp.o
+.PHONY : Dence.o
+
+# target to build an object file
+Dence.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Ex4.dir/build.make CMakeFiles/Ex4.dir/Dence.cpp.o
+.PHONY : Dence.cpp.o
+
+Dence.i: Dence.cpp.i
+.PHONY : Dence.i
+
+# target to preprocess a source file
+Dence.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Ex4.dir/build.make CMakeFiles/Ex4.dir/Dence.cpp.i
+.PHONY : Dence.cpp.i
+
+Dence.s: Dence.cpp.s
+.PHONY : Dence.s
+
+# target to generate assembly for a file
+Dence.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Ex4.dir/build.make CMakeFiles/Ex4.dir/Dence.cpp.s
+.PHONY : Dence.cpp.s
+
 Matrix.o: Matrix.cpp.o
 .PHONY : Matrix.o
 
@@ -186,6 +234,12 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Ex4"
+	@echo "... Activation.o"
+	@echo "... Activation.i"
+	@echo "... Activation.s"
+	@echo "... Dence.o"
+	@echo "... Dence.i"
+	@echo "... Dence.s"
 	@echo "... Matrix.o"
 	@echo "... Matrix.i"
 	@echo "... Matrix.s"

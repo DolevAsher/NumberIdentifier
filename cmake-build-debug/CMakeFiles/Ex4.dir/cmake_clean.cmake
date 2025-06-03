@@ -1,4 +1,8 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/Ex4.dir/Activation.cpp.o"
+  "CMakeFiles/Ex4.dir/Activation.cpp.o.d"
+  "CMakeFiles/Ex4.dir/Dence.cpp.o"
+  "CMakeFiles/Ex4.dir/Dence.cpp.o.d"
   "CMakeFiles/Ex4.dir/Matrix.cpp.o"
   "CMakeFiles/Ex4.dir/Matrix.cpp.o.d"
   "CMakeFiles/Ex4.dir/main.cpp.o"

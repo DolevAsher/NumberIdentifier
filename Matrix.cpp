@@ -125,7 +125,7 @@ Matrix& Matrix::rref() const
                     std::swap(rrefMatrix->_values[r*_dims->cols + i], rrefMatrix->_values[leads*_dims->cols + i]);
 
                 // Dividing the row by the value
-                float divider = 1.0 / (*rrefMatrix)(leads, c);
+                float divider = 1.0f / (*rrefMatrix)(leads, c);
 
                 // Row division
                 for (int i = 0; i < _dims->cols; i++)
@@ -231,11 +231,22 @@ Matrix& operator*(int scalar, Matrix& m)
 
 float Matrix::operator()(int row, int col) const
 {
+    if (row >= _dims->rows || col >= _dims->cols)
+        throw std::runtime_error("Out of bounds.");
     return _values[row*_dims->cols + col];
 }
 
 float Matrix::operator[](int index) const
 {
+    if (index >= _dims->rows*_dims->cols)
+        throw std::runtime_error("Index out of bounds.");
+    return _values[index];
+}
+
+float& Matrix::operator[](int index)
+{
+    if (index >= _dims->rows*_dims->cols)
+        throw std::runtime_error("Index out of bounds.");
     return _values[index];
 }
 

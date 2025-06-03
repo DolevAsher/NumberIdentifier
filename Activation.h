@@ -12,12 +12,12 @@ namespace Activation
      * For each entry in the matrix, it will choose the max value between
      * 0 and the entry's value.
      */
-    Matrix relu(Matrix m);
+    Matrix& relu(const Matrix& m);
 
     /* The function gets a matrix and returns a new matrix.
      * The new matrix is a normalized value matrix.
      */
-    Matrix softmax(Matrix m);
+    Matrix& softmax(const Matrix& m);
 }
 
 

@@ -47,6 +47,7 @@ public:
     friend Matrix& operator*(int scalar, Matrix& m); // Scalar multiplication on the left
     float operator()(int row, int col) const; // Returns the value in cell (row, col)
     float operator[](int index) const; // Returns the value of the cell in the index position
+    float& operator[](int index); // Returns a reference for a cell
     friend std::ostream& operator<<(std::ostream& out, const Matrix& m); // Pretty print of the matrix
     friend std::ifstream& operator>>(std::ifstream& is, Matrix& m); // Fills matrix elements
 };
