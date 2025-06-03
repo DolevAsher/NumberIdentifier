@@ -129,6 +129,30 @@ Ex4/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Ex4.dir/build.make CMakeFiles/Ex4.dir/build
 .PHONY : Ex4/fast
 
+Matrix.o: Matrix.cpp.o
+.PHONY : Matrix.o
+
+# target to build an object file
+Matrix.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Ex4.dir/build.make CMakeFiles/Ex4.dir/Matrix.cpp.o
+.PHONY : Matrix.cpp.o
+
+Matrix.i: Matrix.cpp.i
+.PHONY : Matrix.i
+
+# target to preprocess a source file
+Matrix.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Ex4.dir/build.make CMakeFiles/Ex4.dir/Matrix.cpp.i
+.PHONY : Matrix.cpp.i
+
+Matrix.s: Matrix.cpp.s
+.PHONY : Matrix.s
+
+# target to generate assembly for a file
+Matrix.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Ex4.dir/build.make CMakeFiles/Ex4.dir/Matrix.cpp.s
+.PHONY : Matrix.cpp.s
+
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -162,6 +186,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Ex4"
+	@echo "... Matrix.o"
+	@echo "... Matrix.i"
+	@echo "... Matrix.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

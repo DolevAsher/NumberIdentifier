@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/Ex4.dir/Matrix.cpp.o"
+  "CMakeFiles/Ex4.dir/Matrix.cpp.o.d"
   "CMakeFiles/Ex4.dir/main.cpp.o"
   "CMakeFiles/Ex4.dir/main.cpp.o.d"
   "Ex4"
