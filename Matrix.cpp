@@ -4,10 +4,16 @@
 #include <fstream>
 #include <cmath>
 
+#define EPSILON_RREF 0.000001
+
 // Constructor
 Matrix::Matrix(int row, int col)
 {
-    _dims = new matrix_dims(row, col);
+    if (row < 0 || col < 0)
+        throw std::invalid_argument("Invalid dims size.");
+    _dims = new matrix_dims();
+    _dims->rows = row;
+    _dims->cols = col;
     _values = new float[row * col];
     for (int i = 0; i < row * col; i++)
         _values[i] = 0;
@@ -16,7 +22,9 @@ Matrix::Matrix(int row, int col)
 // Void constructor
 Matrix::Matrix()
 {
-    matrix_dims* dims = new matrix_dims();
+    _dims = new matrix_dims();
+    _dims->cols = 1;
+    _dims->rows = 1;
     _values = new float[1*1];
     _values[0] = 0;
 }
@@ -24,7 +32,9 @@ Matrix::Matrix()
 // Copy constructor
 Matrix::Matrix(const Matrix& m)
 {
-    _dims = new matrix_dims(m._dims->rows, m._dims->cols);
+    _dims = new matrix_dims();
+    _dims->cols = m._dims->cols;
+    _dims->rows = m._dims->rows;
     _values = new float[(_dims->rows)*(_dims->cols)];
     for (int i = 0; i < _dims->rows * _dims->cols; i++)
         _values[i] = m._values[i];
@@ -70,6 +80,8 @@ Matrix& Matrix::transpose()
 // Vectorize
 Matrix& Matrix::vectorize()
 {
+    _dims->rows = _dims->cols*_dims->rows;
+    _dims->cols = 1;
     return *this;
 }
 
@@ -106,46 +118,58 @@ float Matrix::norm() const
 }
 
 // Returns a new Matrix that is the reduced row echelon form of the original
-Matrix& Matrix::rref() const
+Matrix Matrix::rref() const
 {
-    auto rrefMatrix = new Matrix(*this);
+    auto rrefMatrix = Matrix(*this);
 
-    // Counter of lead values
+    // Counter of lead values (current row we're working on)
     int leads = 0;
-    // For the maximum possible number of leading values
-    for (int c = 0; c < std::min(_dims->cols, _dims->rows); c++)
+
+    // Iterate through each column
+    for (int c = 0; c < _dims->cols && leads < _dims->rows; c++)
     {
+        // Look for a pivot in the current column,
+        // starting from the current lead row
         for (int r = leads; r < _dims->rows; r++)
         {
             // Finding the first non-zero value of the current column
-            if ((*rrefMatrix)(r, c) != 0)
+            if (std::abs(rrefMatrix(r, c)) > EPSILON_RREF)
             {
-                // Swapping the whole row to the right one
+
+                // Swapping the whole row to the right position (leads row)
+                if (r != leads)
+                {
+                    for (int i = 0; i < _dims->cols; i++)
+                        std::swap(rrefMatrix(r, i),
+                            rrefMatrix(leads, i));
+                }
+
+                // Dividing the row by the pivot value to make it 1
+                float pivotValue = rrefMatrix(leads, c);
                 for (int i = 0; i < _dims->cols; i++)
-                    std::swap(rrefMatrix->_values[r*_dims->cols + i], rrefMatrix->_values[leads*_dims->cols + i]);
+                    rrefMatrix(leads, i) /= pivotValue;
 
-                // Dividing the row by the value
-                float divider = 1.0f / (*rrefMatrix)(leads, c);
-
-                // Row division
-                for (int i = 0; i < _dims->cols; i++)
-                    rrefMatrix->_values[leads*_dims->cols + i] *= divider;
-
-                // Column zeroing
+                // Column zeroing - eliminate all other entries in this column
                 for (int i = 0; i < _dims->rows; i++)
-                    if ((i != leads) && ((*rrefMatrix)(i, c) != 0)) // Careful not to zero my current beloved row
+                {
+                    // Skip the current pivot row
+                    if (i != leads && std::abs(rrefMatrix(i, c))
+                        > EPSILON_RREF)
                     {
-                        divider = (*rrefMatrix)(i, c) / (*rrefMatrix)(leads, c);
+                        float multiplier = rrefMatrix(i, c);
                         for (int j = 0; j < _dims->cols; j++)
-                            rrefMatrix->_values[i*_dims->cols + j] = (*rrefMatrix)(i, j) - (divider*(*rrefMatrix)(leads, j));
+                            rrefMatrix(i, j) -= multiplier *
+                                rrefMatrix(leads, j);
                     }
+                }
 
+                // Move to the next row for the next pivot
                 leads++;
+                break; // Break out of the row search loop
             }
-
         }
     }
-    return *rrefMatrix;
+    return rrefMatrix;
 }
 
 // Returns index (single-dimension index) of the largest number in the matrix.
@@ -191,8 +215,9 @@ Matrix& Matrix::operator+(const Matrix& m) const
 
 Matrix& Matrix::operator=(const Matrix& m)
 {
-    if (_dims->cols != m._dims->cols || _dims->rows != m._dims->rows)
-        throw std::runtime_error("Matrices in different dimensions.");
+    _values = new float[m._dims->rows*m._dims->cols];
+    _dims->cols = m._dims->cols;
+    _dims->rows = m._dims->rows;
     for (int i = 0; i < _dims->rows*_dims->cols; i++)
         _values[i] = m._values[i];
     return *this;
@@ -201,51 +226,71 @@ Matrix& Matrix::operator=(const Matrix& m)
 Matrix& Matrix::operator*(const Matrix& m) const
 {
     if (_dims->cols != m._dims->rows)
-        throw std::runtime_error("Matrices dimensions do not fit for multiplication.");
+        throw std::runtime_error("Matrices dimensions"
+                                 " do not fit for multiplication.");
     auto newMat = new Matrix(_dims->rows, m._dims->cols);
     float sum = 0;
-    for (int r = 0; r < _dims->rows; r++)
-        for (int c = 0; c < m._dims->cols; c++)
-        {
-            for (int k = 0; k < _dims->cols; k++)
-                sum += _values[r*_dims->cols + k] * m._values[k*_dims->cols + c];
-            newMat->_values[r*newMat->_dims->cols + c] = sum;
-            sum = 0;
-        }
+    try
+    {
+        for (int r = 0; r < _dims->rows; r++)
+            for (int c = 0; c < m._dims->cols; c++)
+            {
+                for (int k = 0; k < _dims->cols; k++)
+                    sum += _values[r*_dims->cols + k] *
+                        m._values[k*m._dims->cols + c];
+                newMat->_values[r*newMat->_dims->cols + c] = sum;
+                sum = 0;
+            }
+    }
+    catch (...)
+    {
+        throw;
+    }
     return *newMat;
 }
 
-Matrix& Matrix::operator*(float c)
+Matrix Matrix::operator*(float c) const
 {
+    Matrix newMat(*this);
     for (int i = 0; i < _dims->rows*_dims->cols; i++)
-        _values[i] *= c;
-    return *this;
+        newMat[i] *= c;
+    return newMat;
 }
 
-Matrix& operator*(int scalar, Matrix& m)
+Matrix operator*(int scalar,const Matrix& m)
 {
-    for (int i = 0; i < m._dims->rows*m._dims->cols; i++)
-        m._values[i] *= scalar;
-    return m;
+    Matrix newMat(m);
+    for (int i = 0; i < m.get_rows()*m.get_cols(); i++)
+        newMat[i] *= scalar;
+    return newMat;
 }
 
 float Matrix::operator()(int row, int col) const
 {
-    if (row >= _dims->rows || col >= _dims->cols)
+    if (row >= _dims->rows || col >= _dims->cols ||
+        row < 0 || col < 0)
+        throw std::runtime_error("Out of bounds.");
+    return _values[row*_dims->cols + col];
+}
+
+float& Matrix::operator()(int row, int col)
+{
+    if (row >= _dims->rows || col >= _dims->cols ||
+        row < 0 || col < 0)
         throw std::runtime_error("Out of bounds.");
     return _values[row*_dims->cols + col];
 }
 
 float Matrix::operator[](int index) const
 {
-    if (index >= _dims->rows*_dims->cols)
+    if (index >= _dims->rows*_dims->cols || index < 0)
         throw std::runtime_error("Index out of bounds.");
     return _values[index];
 }
 
 float& Matrix::operator[](int index)
 {
-    if (index >= _dims->rows*_dims->cols)
+    if (index >= _dims->rows*_dims->cols || index < 0)
         throw std::runtime_error("Index out of bounds.");
     return _values[index];
 }
@@ -266,24 +311,23 @@ std::ostream& operator<<(std::ostream& os, const Matrix& m)
     return os;
 }
 
-std::ifstream& operator>>(std::ifstream& is, Matrix& m)
+std::istream& operator>>(std::istream& is, Matrix& m)
 {
-    if (!is.is_open())
-        throw std::runtime_error("Can't read from file.");
-
-    is.seekg (0, is.end);
-    long unsigned int length = is.tellg();
-    is.seekg (0, is.beg);
-
-    if (length < m._dims->rows * m._dims->cols)
-        throw std::runtime_error("File is too small.");
-
-    if (!is.read (reinterpret_cast<char*>(m._values), m._dims->rows * m._dims->cols) * sizeof(float))
-        throw std::runtime_error("Failed to read.");
-
-    is.close ();
     if (!is)
-        throw std::runtime_error("Can't read from file.");
+        throw std::runtime_error("Can't read from stream.");
+
+    // is.seekg (0, is.end);
+    // long unsigned int length = is.tellg();
+    // is.seekg (0, is.beg);
+
+    // if ((int)length < m._dims->rows * m._dims->cols)
+    //     throw std::runtime_error("File is too small.");
+
+    const size_t dataSize = m._dims->rows *
+        m._dims->cols * sizeof(float);
+
+    if (!is.read(reinterpret_cast<char*>(m._values), dataSize))
+        throw std::runtime_error("Failed to read matrix data.");
 
     return is;
 }

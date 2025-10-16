@@ -28,6 +28,15 @@ const matrix_dims bias_dims[] = {{128, 1},
 								 {20,  1},
 								 {10,  1}};
 
-// Insert MlpNetwork class here...
+class MlpNetwork
+{
+private:
+	Dense* _dense[MLP_SIZE];
+
+public:
+	MlpNetwork(Matrix weights[], Matrix biases[]); // Constructor
+
+	digit& operator()(const Matrix& input) const; // Applying the matrices
+};
 
 #endif // MLPNETWORK_H

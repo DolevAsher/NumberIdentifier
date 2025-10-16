@@ -153,29 +153,29 @@ Activation.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Ex4.dir/build.make CMakeFiles/Ex4.dir/Activation.cpp.s
 .PHONY : Activation.cpp.s
 
-Dence.o: Dence.cpp.o
-.PHONY : Dence.o
+Dense.o: Dense.cpp.o
+.PHONY : Dense.o
 
 # target to build an object file
-Dence.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Ex4.dir/build.make CMakeFiles/Ex4.dir/Dence.cpp.o
-.PHONY : Dence.cpp.o
+Dense.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Ex4.dir/build.make CMakeFiles/Ex4.dir/Dense.cpp.o
+.PHONY : Dense.cpp.o
 
-Dence.i: Dence.cpp.i
-.PHONY : Dence.i
+Dense.i: Dense.cpp.i
+.PHONY : Dense.i
 
 # target to preprocess a source file
-Dence.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Ex4.dir/build.make CMakeFiles/Ex4.dir/Dence.cpp.i
-.PHONY : Dence.cpp.i
+Dense.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Ex4.dir/build.make CMakeFiles/Ex4.dir/Dense.cpp.i
+.PHONY : Dense.cpp.i
 
-Dence.s: Dence.cpp.s
-.PHONY : Dence.s
+Dense.s: Dense.cpp.s
+.PHONY : Dense.s
 
 # target to generate assembly for a file
-Dence.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Ex4.dir/build.make CMakeFiles/Ex4.dir/Dence.cpp.s
-.PHONY : Dence.cpp.s
+Dense.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Ex4.dir/build.make CMakeFiles/Ex4.dir/Dense.cpp.s
+.PHONY : Dense.cpp.s
 
 Matrix.o: Matrix.cpp.o
 .PHONY : Matrix.o
@@ -200,6 +200,54 @@ Matrix.s: Matrix.cpp.s
 Matrix.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Ex4.dir/build.make CMakeFiles/Ex4.dir/Matrix.cpp.s
 .PHONY : Matrix.cpp.s
+
+MlpNetwork.o: MlpNetwork.cpp.o
+.PHONY : MlpNetwork.o
+
+# target to build an object file
+MlpNetwork.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Ex4.dir/build.make CMakeFiles/Ex4.dir/MlpNetwork.cpp.o
+.PHONY : MlpNetwork.cpp.o
+
+MlpNetwork.i: MlpNetwork.cpp.i
+.PHONY : MlpNetwork.i
+
+# target to preprocess a source file
+MlpNetwork.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Ex4.dir/build.make CMakeFiles/Ex4.dir/MlpNetwork.cpp.i
+.PHONY : MlpNetwork.cpp.i
+
+MlpNetwork.s: MlpNetwork.cpp.s
+.PHONY : MlpNetwork.s
+
+# target to generate assembly for a file
+MlpNetwork.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Ex4.dir/build.make CMakeFiles/Ex4.dir/MlpNetwork.cpp.s
+.PHONY : MlpNetwork.cpp.s
+
+Test_1.o: Test_1.cpp.o
+.PHONY : Test_1.o
+
+# target to build an object file
+Test_1.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Ex4.dir/build.make CMakeFiles/Ex4.dir/Test_1.cpp.o
+.PHONY : Test_1.cpp.o
+
+Test_1.i: Test_1.cpp.i
+.PHONY : Test_1.i
+
+# target to preprocess a source file
+Test_1.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Ex4.dir/build.make CMakeFiles/Ex4.dir/Test_1.cpp.i
+.PHONY : Test_1.cpp.i
+
+Test_1.s: Test_1.cpp.s
+.PHONY : Test_1.s
+
+# target to generate assembly for a file
+Test_1.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Ex4.dir/build.make CMakeFiles/Ex4.dir/Test_1.cpp.s
+.PHONY : Test_1.cpp.s
 
 main.o: main.cpp.o
 .PHONY : main.o
@@ -237,12 +285,18 @@ help:
 	@echo "... Activation.o"
 	@echo "... Activation.i"
 	@echo "... Activation.s"
-	@echo "... Dence.o"
-	@echo "... Dence.i"
-	@echo "... Dence.s"
+	@echo "... Dense.o"
+	@echo "... Dense.i"
+	@echo "... Dense.s"
 	@echo "... Matrix.o"
 	@echo "... Matrix.i"
 	@echo "... Matrix.s"
+	@echo "... MlpNetwork.o"
+	@echo "... MlpNetwork.i"
+	@echo "... MlpNetwork.s"
+	@echo "... Test_1.o"
+	@echo "... Test_1.i"
+	@echo "... Test_1.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

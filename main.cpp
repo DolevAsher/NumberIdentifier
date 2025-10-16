@@ -6,6 +6,7 @@
 
 // My includes
 #include <iostream>
+#include <fstream>
 // End of my includes
 
 #define QUIT "q"
@@ -14,9 +15,10 @@
 #define ERROR_INVALID_INPUT "Error: Failed to retrieve input. Exiting.."
 #define ERROR_INVALID_IMG "Error: invalid image path or size: "
 #define USAGE_MSG "Usage:\n" \
-                  "\t./mlpnetwork w1 w2 w3 w4 b1 b2 b3 b4\n" \
-                  "\twi - the i'th layer's weights\n" \
-                  "\tbi - the i'th layer's biases"
+                   "\t./mlpnetwork w1 w2 w3 w4 b1 b2 b3 b4\n" \
+                   "\twi - the i'th layer's weights\n" \
+                   "\tbi - the i'th layer's biases"
+
 #define USAGE_ERR "Error: wrong number of arguments."
 #define ARGS_START_IDX 1
 #define ARGS_COUNT (ARGS_START_IDX + (MLP_SIZE * 2))
@@ -49,8 +51,18 @@ void usage (int argc) noexcept (false)
  */
 bool readFileToMatrix (const std::string &filePath, Matrix &mat)
 {
-//TODO: implement this function
-  return true;
+	// Open the binary file for reading
+	std::ifstream file(filePath, std::ios::binary);
+	if (!file.is_open())
+	{
+		return false;  // Failed to open file
+	}
+
+	// Use the friend extraction operator to read into the matrix
+	file >> mat;
+
+	// Check that the file stream is still valid
+	return file.good();
 }
 
 /**

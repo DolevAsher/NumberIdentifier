@@ -111,26 +111,56 @@ CMakeFiles/Ex4.dir/Activation.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Ex4.dir/Activation.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/mnt/c/Users/dolev/Documents/תואר במדעי המחשב/CLionProjects/Ex4/Activation.cpp" -o CMakeFiles/Ex4.dir/Activation.cpp.s
 
-CMakeFiles/Ex4.dir/Dence.cpp.o: CMakeFiles/Ex4.dir/flags.make
-CMakeFiles/Ex4.dir/Dence.cpp.o: /mnt/c/Users/dolev/Documents/תואר\ במדעי\ המחשב/CLionProjects/Ex4/Dence.cpp
-CMakeFiles/Ex4.dir/Dence.cpp.o: CMakeFiles/Ex4.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/mnt/c/Users/dolev/Documents/תואר במדעי המחשב/CLionProjects/Ex4/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Ex4.dir/Dence.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Ex4.dir/Dence.cpp.o -MF CMakeFiles/Ex4.dir/Dence.cpp.o.d -o CMakeFiles/Ex4.dir/Dence.cpp.o -c "/mnt/c/Users/dolev/Documents/תואר במדעי המחשב/CLionProjects/Ex4/Dence.cpp"
+CMakeFiles/Ex4.dir/Dense.cpp.o: CMakeFiles/Ex4.dir/flags.make
+CMakeFiles/Ex4.dir/Dense.cpp.o: /mnt/c/Users/dolev/Documents/תואר\ במדעי\ המחשב/CLionProjects/Ex4/Dense.cpp
+CMakeFiles/Ex4.dir/Dense.cpp.o: CMakeFiles/Ex4.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/mnt/c/Users/dolev/Documents/תואר במדעי המחשב/CLionProjects/Ex4/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Ex4.dir/Dense.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Ex4.dir/Dense.cpp.o -MF CMakeFiles/Ex4.dir/Dense.cpp.o.d -o CMakeFiles/Ex4.dir/Dense.cpp.o -c "/mnt/c/Users/dolev/Documents/תואר במדעי המחשב/CLionProjects/Ex4/Dense.cpp"
 
-CMakeFiles/Ex4.dir/Dence.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Ex4.dir/Dence.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/mnt/c/Users/dolev/Documents/תואר במדעי המחשב/CLionProjects/Ex4/Dence.cpp" > CMakeFiles/Ex4.dir/Dence.cpp.i
+CMakeFiles/Ex4.dir/Dense.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Ex4.dir/Dense.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/mnt/c/Users/dolev/Documents/תואר במדעי המחשב/CLionProjects/Ex4/Dense.cpp" > CMakeFiles/Ex4.dir/Dense.cpp.i
 
-CMakeFiles/Ex4.dir/Dence.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Ex4.dir/Dence.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/mnt/c/Users/dolev/Documents/תואר במדעי המחשב/CLionProjects/Ex4/Dence.cpp" -o CMakeFiles/Ex4.dir/Dence.cpp.s
+CMakeFiles/Ex4.dir/Dense.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Ex4.dir/Dense.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/mnt/c/Users/dolev/Documents/תואר במדעי המחשב/CLionProjects/Ex4/Dense.cpp" -o CMakeFiles/Ex4.dir/Dense.cpp.s
+
+CMakeFiles/Ex4.dir/MlpNetwork.cpp.o: CMakeFiles/Ex4.dir/flags.make
+CMakeFiles/Ex4.dir/MlpNetwork.cpp.o: /mnt/c/Users/dolev/Documents/תואר\ במדעי\ המחשב/CLionProjects/Ex4/MlpNetwork.cpp
+CMakeFiles/Ex4.dir/MlpNetwork.cpp.o: CMakeFiles/Ex4.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/mnt/c/Users/dolev/Documents/תואר במדעי המחשב/CLionProjects/Ex4/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Ex4.dir/MlpNetwork.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Ex4.dir/MlpNetwork.cpp.o -MF CMakeFiles/Ex4.dir/MlpNetwork.cpp.o.d -o CMakeFiles/Ex4.dir/MlpNetwork.cpp.o -c "/mnt/c/Users/dolev/Documents/תואר במדעי המחשב/CLionProjects/Ex4/MlpNetwork.cpp"
+
+CMakeFiles/Ex4.dir/MlpNetwork.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Ex4.dir/MlpNetwork.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/mnt/c/Users/dolev/Documents/תואר במדעי המחשב/CLionProjects/Ex4/MlpNetwork.cpp" > CMakeFiles/Ex4.dir/MlpNetwork.cpp.i
+
+CMakeFiles/Ex4.dir/MlpNetwork.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Ex4.dir/MlpNetwork.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/mnt/c/Users/dolev/Documents/תואר במדעי המחשב/CLionProjects/Ex4/MlpNetwork.cpp" -o CMakeFiles/Ex4.dir/MlpNetwork.cpp.s
+
+CMakeFiles/Ex4.dir/Test_1.cpp.o: CMakeFiles/Ex4.dir/flags.make
+CMakeFiles/Ex4.dir/Test_1.cpp.o: /mnt/c/Users/dolev/Documents/תואר\ במדעי\ המחשב/CLionProjects/Ex4/Test_1.cpp
+CMakeFiles/Ex4.dir/Test_1.cpp.o: CMakeFiles/Ex4.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/mnt/c/Users/dolev/Documents/תואר במדעי המחשב/CLionProjects/Ex4/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Ex4.dir/Test_1.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Ex4.dir/Test_1.cpp.o -MF CMakeFiles/Ex4.dir/Test_1.cpp.o.d -o CMakeFiles/Ex4.dir/Test_1.cpp.o -c "/mnt/c/Users/dolev/Documents/תואר במדעי המחשב/CLionProjects/Ex4/Test_1.cpp"
+
+CMakeFiles/Ex4.dir/Test_1.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Ex4.dir/Test_1.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/mnt/c/Users/dolev/Documents/תואר במדעי המחשב/CLionProjects/Ex4/Test_1.cpp" > CMakeFiles/Ex4.dir/Test_1.cpp.i
+
+CMakeFiles/Ex4.dir/Test_1.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Ex4.dir/Test_1.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/mnt/c/Users/dolev/Documents/תואר במדעי המחשב/CLionProjects/Ex4/Test_1.cpp" -o CMakeFiles/Ex4.dir/Test_1.cpp.s
 
 # Object files for target Ex4
 Ex4_OBJECTS = \
 "CMakeFiles/Ex4.dir/main.cpp.o" \
 "CMakeFiles/Ex4.dir/Matrix.cpp.o" \
 "CMakeFiles/Ex4.dir/Activation.cpp.o" \
-"CMakeFiles/Ex4.dir/Dence.cpp.o"
+"CMakeFiles/Ex4.dir/Dense.cpp.o" \
+"CMakeFiles/Ex4.dir/MlpNetwork.cpp.o" \
+"CMakeFiles/Ex4.dir/Test_1.cpp.o"
 
 # External object files for target Ex4
 Ex4_EXTERNAL_OBJECTS =
@@ -138,10 +168,12 @@ Ex4_EXTERNAL_OBJECTS =
 Ex4: CMakeFiles/Ex4.dir/main.cpp.o
 Ex4: CMakeFiles/Ex4.dir/Matrix.cpp.o
 Ex4: CMakeFiles/Ex4.dir/Activation.cpp.o
-Ex4: CMakeFiles/Ex4.dir/Dence.cpp.o
+Ex4: CMakeFiles/Ex4.dir/Dense.cpp.o
+Ex4: CMakeFiles/Ex4.dir/MlpNetwork.cpp.o
+Ex4: CMakeFiles/Ex4.dir/Test_1.cpp.o
 Ex4: CMakeFiles/Ex4.dir/build.make
 Ex4: CMakeFiles/Ex4.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="/mnt/c/Users/dolev/Documents/תואר במדעי המחשב/CLionProjects/Ex4/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable Ex4"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="/mnt/c/Users/dolev/Documents/תואר במדעי המחשב/CLionProjects/Ex4/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable Ex4"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Ex4.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

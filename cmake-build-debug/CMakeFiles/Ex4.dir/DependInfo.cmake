@@ -9,8 +9,10 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/mnt/c/Users/dolev/Documents/תואר במדעי המחשב/CLionProjects/Ex4/Activation.cpp" "CMakeFiles/Ex4.dir/Activation.cpp.o" "gcc" "CMakeFiles/Ex4.dir/Activation.cpp.o.d"
-  "/mnt/c/Users/dolev/Documents/תואר במדעי המחשב/CLionProjects/Ex4/Dence.cpp" "CMakeFiles/Ex4.dir/Dence.cpp.o" "gcc" "CMakeFiles/Ex4.dir/Dence.cpp.o.d"
+  "/mnt/c/Users/dolev/Documents/תואר במדעי המחשב/CLionProjects/Ex4/Dense.cpp" "CMakeFiles/Ex4.dir/Dense.cpp.o" "gcc" "CMakeFiles/Ex4.dir/Dense.cpp.o.d"
   "/mnt/c/Users/dolev/Documents/תואר במדעי המחשב/CLionProjects/Ex4/Matrix.cpp" "CMakeFiles/Ex4.dir/Matrix.cpp.o" "gcc" "CMakeFiles/Ex4.dir/Matrix.cpp.o.d"
+  "/mnt/c/Users/dolev/Documents/תואר במדעי המחשב/CLionProjects/Ex4/MlpNetwork.cpp" "CMakeFiles/Ex4.dir/MlpNetwork.cpp.o" "gcc" "CMakeFiles/Ex4.dir/MlpNetwork.cpp.o.d"
+  "/mnt/c/Users/dolev/Documents/תואר במדעי המחשב/CLionProjects/Ex4/Test_1.cpp" "CMakeFiles/Ex4.dir/Test_1.cpp.o" "gcc" "CMakeFiles/Ex4.dir/Test_1.cpp.o.d"
   "/mnt/c/Users/dolev/Documents/תואר במדעי המחשב/CLionProjects/Ex4/main.cpp" "CMakeFiles/Ex4.dir/main.cpp.o" "gcc" "CMakeFiles/Ex4.dir/main.cpp.o.d"
   )
 

@@ -6,4 +6,6 @@ set(CMAKE_CXX_STANDARD 20)
 add_executable(Ex4 main.cpp
         Matrix.cpp
         Activation.cpp
-        Dence.cpp)
+        Dense.cpp
+        MlpNetwork.cpp
+        Test_1.cpp)

@@ -4,9 +4,9 @@
 
 #include "Matrix.h"
 
-typedef Matrix (*ActivationFunction)(Matrix);
+typedef Matrix& (*ActivationFunction)(const Matrix&);
 
-namespace Activation
+namespace activation
 {
     /* The function gets a matrix and returns a new matrix.
      * For each entry in the matrix, it will choose the max value between

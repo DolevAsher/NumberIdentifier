@@ -4,23 +4,24 @@
 
 #include "Activation.h"
 
-// Insert Dense class here...
 class Dense
 {
 private:
-    Matrix weights_, bias_;
-    ActivationFunction function_;
+    Matrix* _weights;
+    Matrix* _bias;
+    ActivationFunction _function;
 
 public:
-    Dense(Matrix weights, Matrix bias, ActivationFunction function);
-    Dense(Dense &d);
+    Dense(Matrix& weights, Matrix& bias, ActivationFunction function);
+    Dense(const Dense& d); // Copy constructor
     ~Dense();
 
-    Matrix get_weights() const;
-    Matrix get_bias() const;
-    ActivationFunction get_function() const;
+    Matrix& get_weights() const;
+    Matrix& get_bias() const;
+    ActivationFunction get_activation() const;
 
-    Matrix operator()(Matrix &m); // Applies the layer on the input and returns an output matrix
+    // Applies the layer on the input and returns an output matrix
+    Matrix& operator()(const Matrix &m) const;
 };
 
 
