@@ -1,7 +1,7 @@
 HANDWRITING NUMBERS IDENTIFIER.
 
 This program uses a trained neural network to identify a number that was handwritten.
-This project is written in C++.
+This project is written in C/C++.
 
 Running the program with command line (WSL for windows users):
 1. Changing directory to the place the program is saved.
