@@ -16,7 +16,8 @@ For termination enter q.
 
 Running examples:
 
-<img width="466" height="164" alt="צילום מסך 2025-11-03 235650" src="https://github.com/user-attachments/assets/91b41996-ac44-4db7-823b-1731fff87299" />
-
+<img width="233" height="82" alt="צילום מסך 2025-11-03 235650" src="https://github.com/user-attachments/assets/91b41996-ac44-4db7-823b-1731fff87299" />
+<br>
 <img width="256" height="350" alt="צילום מסך 2025-11-03 235639" src="https://github.com/user-attachments/assets/268e8c3c-aedf-40dc-b026-7a69b0b99f59" />
-<img width="242" height="360" alt="image" src="https://github.com/user-attachments/assets/945770ef-c9a7-4f20-8992-a63b790ba9a8" />
+<img width="235" height="350" alt="image" src="https://github.com/user-attachments/assets/945770ef-c9a7-4f20-8992-a63b790ba9a8" />
+<img width="243" height="350" alt="image" src="https://github.com/user-attachments/assets/b75ea1d6-9117-4772-a330-de1f13030b71" />
