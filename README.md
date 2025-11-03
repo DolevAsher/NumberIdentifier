@@ -13,3 +13,7 @@ for example: ./images/im0
 4. The program shall print the given number and identify it.
 
 For termination enter q.
+
+Running examples:
+<img width="466" height="164" alt="צילום מסך 2025-11-03 235650" src="https://github.com/user-attachments/assets/91b41996-ac44-4db7-823b-1731fff87299" />
+<img width="512" height="700" alt="צילום מסך 2025-11-03 235639" src="https://github.com/user-attachments/assets/268e8c3c-aedf-40dc-b026-7a69b0b99f59" />
